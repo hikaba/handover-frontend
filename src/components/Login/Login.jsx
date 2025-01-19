@@ -10,7 +10,7 @@ function Login(){
     const handleEmailLogin = async (event) => {
         event.preventDefault();
         try {
-            await doSignInWithEmailAndPassword(EmailAuthCredential, password);
+            await doSignInWithEmailAndPassword(email, password);
             navigate('/');
         } catch (error) {
             console.error("Error signing in:", error.message);
@@ -27,9 +27,36 @@ function Login(){
 
     return(
         <div className="login-wrapper">
-
+            <form className="login__form"
+            onSubmit={handleEmailLogin}>
+                <label className="login__label">
+                    <p className="lgoin__email">Email</p>
+                    <input 
+                    type="email"
+                    value={email}
+                    id="email"
+                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    required />
+                </label>
+                <label className="login__label">
+                    <p className="lgoin__password">Password</p>
+                    <input 
+                    type="password"
+                    value={password}
+                    id="password"
+                    name="password"
+                    onChange={(e) => setPassword(e.target.value)}
+                    required />
+                </label>
+                <div className="login__button-wrapper">
+                    <button type="submit" className="login__button">Login</button>
+                </div>
+            </form>
+            <button onClick={handleGoogleLogin} 
+            className="login__button-google">Sign in with Google</button>
         </div>
-    )
+    );
 
 }
-export default LoginPage;
+export default Login;
