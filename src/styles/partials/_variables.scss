@@ -1,0 +1,15 @@
+@use "./fonts" as *;
+
+$font-stack: "Newsreader", serif;
+$font-stack-body: "Outfit", sans-serif;
+
+$primary-text-color: #0C1E1A;
+$primary-accent-color: #283618;
+$primary-background-color: #E9EDC9;
+$border-color: #CCD5AE;
+$secondary-background-color: #E4EFEC;
+$secondary-text-color: #FFFFFF;
+
+$mobile-breakpoint: 767px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;

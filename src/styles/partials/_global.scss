@@ -1,0 +1,16 @@
+@use "./variables" as *;
+@use "./fonts" as *;
+@use "./mixins" as *;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $primary-background-color;
+    font-family: $font-stack-body;
+    font-weight: 300;
+    color: $primary-text-color;
+    padding: 0;
+    margin: 0;
+}
