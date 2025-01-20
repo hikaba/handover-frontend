@@ -1,0 +1,42 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.header{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include tablet{
+        @include tablet-padding;
+    }
+    &__link{
+        text-decoration: none;
+        color: $primary-accent-color;
+    }
+    &__title{
+        @include mobile-wordmark-style;
+        @include tablet{
+            @include tablet-desktop-wordmark-style;
+            padding: 1.5rem 0;
+        }
+    }
+    &__nav{
+        text-decoration: none;
+    }
+    &__list{
+        list-style: none;
+        text-decoration: none;
+        display: flex;
+        gap: 1rem;
+    }
+    &__list-item{
+        @include mobile-heading-style;
+        @include tablet{
+            @include tablet-desktop-heading-style;
+        }
+    }
+    &__nav-link{
+        text-decoration: none;
+        color: $primary-text-color;
+    }
+}
