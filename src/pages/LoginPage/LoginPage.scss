@@ -11,25 +11,13 @@
   &__header {
     font-size: 2.5rem;
     color: $primary-color;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     font-weight: bold;
     @include tablet{
       font-size: 3rem;
     }
     @include desktop{
       font-size: 3.5rem;
-    }
-  }
-
-  &__text {
-    font-size: 1.25rem;
-    color: darken($text-color, 20%);
-    margin-bottom: 2rem;
-    @include tablet{
-      font-size: 1.5rem;
-    }
-    @include desktop{
-      font-size: 1.75rem;
     }
   }
 }
