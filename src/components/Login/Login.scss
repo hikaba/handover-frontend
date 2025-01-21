@@ -9,6 +9,13 @@
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    @include tablet{
+        padding: 2.5rem;
+    }
+    @include desktop{
+        padding: 3rem;
+        max-width: 450px;
+    }  
   
     &__form {
       display: flex;
@@ -100,12 +107,5 @@
               text-decoration: underline;
           }
       }
-    }
-    @include tablet{
-        padding: 2.5rem;
-    }
-    @include desktop{
-        padding: 3rem;
-        max-width: 450px;
-    }       
+    }     
 }

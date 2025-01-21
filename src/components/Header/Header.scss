@@ -1,3 +1,61 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 
+.header {
+  background-color: $primary-color;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  @include tablet {
+    padding: 1.5rem 3rem;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  @include desktop {
+    padding: 2rem 4rem;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+
+    @include desktop{
+        font-size: 2rem;
+    }
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    margin: 0 1rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &__nav-link {
+    @include nav-style(#fff, $primary-color, #fff);
+    @include desktop{
+        font-size: 1.1rem;
+    }
+  }
+}
+
