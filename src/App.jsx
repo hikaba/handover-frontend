@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import Loading from "./components/Loading/Loading";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import Header from "./components/Header/Header";
+import ForgotPasswordPage from "./pages/ForgotPasswordPage/ForgotPasswordPage"
 function AppContent() {
   const { currentUser, loading } = useAuth();
 
@@ -16,12 +17,12 @@ function AppContent() {
 
   return (
     <BrowserRouter>
-      <Header user={currentUser} />
-      {/* {currentUser ? <Header user={currentUser} /> : null} */}
+      {currentUser ? <Header user={currentUser} /> : null}
       <Routes>
         <Route path="/" element={currentUser ? <HomePage /> : <Navigate to="/login" />} />
         <Route path="/login" element={!currentUser ? <LoginPage /> : <Navigate to="/" />} />
         <Route path="/signup" element={!currentUser ? <SignUpPage /> : <Navigate to="/" />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
 
       </Routes> 
 
@@ -37,4 +38,4 @@ function App() {
 
 }
 
-export default App
+export default App;

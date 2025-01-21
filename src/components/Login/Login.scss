@@ -1,0 +1,111 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+
+.login {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    &__label {
+        text-align: left;
+        color: darken($text-color, 20%);
+        font-weight: bold;
+    }
+    &__text {
+          margin-bottom: 0.5rem;
+        }
+  
+    &__input {
+          width: 100%;
+          padding: 0.75rem;
+          border: 1px solid $border-color;
+          border-radius: 5px;
+          font-size: 1rem;
+          background-color: $background-color;
+  
+          &:focus {
+            border-color: $primary-color;
+            outline: none;
+            box-shadow: 0 0 5px rgba($primary-color, 0.5);
+          }
+        }
+    &__button-wrapper {
+        margin-top: 1rem
+    }
+        
+    &__button {
+        @include button-style($primary-color);
+        width: 100%;
+    }
+    &__button-google {
+        @include button-style($accent-color);
+        margin-top: 1rem;
+        width: 100%;
+      }
+       // OR divider
+    &__divider {
+      text-align: center;
+      margin: 1.5rem 0;
+      position: relative;
+
+      &::before, &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          width: 40%;
+          height: 1px;
+          background-color: $border-color;
+      }
+
+      &::before {
+          left: 0;
+      }
+
+      &::after {
+          right: 0;
+      }
+  }
+
+  &__divider-text {
+      position: relative;
+      font-size: 0.9rem;
+      color: $text-color;
+      padding: 0 1rem;
+      background-color: #fff;
+  }
+
+  &__links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: darken($text-color, 20%);
+      margin-top: 1rem;
+      
+      a {
+          color: $primary-color;
+          text-decoration: none;
+          font-weight: normal;
+
+          &:hover {
+              text-decoration: underline;
+          }
+      }
+    }
+    @include tablet{
+        padding: 2.5rem;
+    }
+    @include desktop{
+        padding: 3rem;
+        max-width: 450px;
+    }       
+}

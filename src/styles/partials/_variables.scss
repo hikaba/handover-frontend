@@ -1,14 +1,16 @@
 @use "./fonts" as *;
+@use 'sass:color';
 
-$font-stack: "Newsreader", serif;
-$font-stack-body: "Outfit", sans-serif;
+// Healthcare color scheme
+$primary-color: #4C8CFF; // Soft Blue for trust and clarity
+$accent-color: #4CAF50; // Fresh Green for health and safety
+$background-color: #F4F6F8; // Light Gray for a neutral and clean background
+$text-color: #333333; // Dark Gray for readability
+$border-color: #D1D3D4; // Light Gray for form borders
 
-$primary-text-color: #0C1E1A;
-$primary-accent-color: #283618;
-$primary-background-color: #E9EDC9;
-$border-color: #CCD5AE;
-$secondary-background-color: #E4EFEC;
-$secondary-text-color: #FFFFFF;
+$button-hover-color: color.scale($primary-color, $lightness: -10%); // Slightly darker for hover effect
+
+$font-family: 'Roboto', sans-serif;
 
 $mobile-breakpoint: 767px;
 $tablet-breakpoint: 768px;

@@ -21,12 +21,6 @@ function Header({ user }) {
         </ul>
       </nav>
     </header>
-    // <nav>
-    //   <ul>
-    //     <li><Link to="/">HandOver</Link></li>
-    //     <li><Link to="/profile">Profile</Link></li>
-    //   </ul>
-    // </nav>
   );
 }
 

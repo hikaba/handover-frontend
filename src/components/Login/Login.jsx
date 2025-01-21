@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { doSignInWithEmailAndPassword, doSignInWithGoogle } from "../../firebase/auth";
+import "./Login.scss";
 
 function Login(){
     const [email, setEmail] = useState('');
@@ -26,12 +28,13 @@ function Login(){
     }
 
     return(
-        <div className="login-wrapper">
+        <div className="login">
             <form className="login__form"
             onSubmit={handleEmailLogin}>
                 <label className="login__label">
-                    <p className="lgoin__email">Email</p>
-                    <input 
+                    <p className="login__text">Email</p>
+                    <input
+                    className="login__input" 
                     type="email"
                     value={email}
                     id="email"
@@ -40,8 +43,9 @@ function Login(){
                     required />
                 </label>
                 <label className="login__label">
-                    <p className="lgoin__password">Password</p>
+                    <p className="login__text">Password</p>
                     <input 
+                    className="login__input"
                     type="password"
                     value={password}
                     id="password"
@@ -53,8 +57,18 @@ function Login(){
                     <button type="submit" className="login__button">Login</button>
                 </div>
             </form>
+            
             <button onClick={handleGoogleLogin} 
             className="login__button-google">Sign in with Google</button>
+            
+            <div className="login__divider">
+                <span className="login__divider-text">OR</span>
+            </div>
+
+            <div className="login__links">
+                <p className="login__link-text">Don't have an account? <Link className="login__link" to="/signup">Sign up now</Link></p>
+                <Link to="/forgot-password">Forgot password?</Link>
+            </div>
         </div>
     );
 
