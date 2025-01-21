@@ -7,13 +7,13 @@ import "./Login.scss";
 function Login(){
     const [email, setEmail] = useState('');
     const [password,setPassword] = useState('');
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleEmailLogin = async (event) => {
         event.preventDefault();
         try {
             await doSignInWithEmailAndPassword(email, password);
-            navigate('/');
+            // navigate('/');
         } catch (error) {
             console.error("Error signing in:", error.message);
         }
@@ -21,7 +21,7 @@ function Login(){
     const handleGoogleLogin = async () => {
         try {
             await doSignInWithGoogle();
-            navigate('/');
+            // navigate('/');
         } catch (error) {
             console.error("Error singing in with Google:", error.message);
         }
