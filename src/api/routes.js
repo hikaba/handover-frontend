@@ -34,7 +34,7 @@ apiClient.interceptors.response.use(
     }
 );
 
-export const getPatients = () => {
+export const getAllPatients = () => {
     return apiClient.get(`/api/patients`);
 };
 

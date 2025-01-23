@@ -10,6 +10,7 @@ import Header from "./components/Header/Header";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage/ForgotPasswordPage";
 import AddPatientPage from './pages/AddPatientPage/AddPatientPage';
 import PatientPage from './pages/PatientPage/PatientPage';
+import LandingPage from './pages/LandingPage/LandingPage';
 function AppContent() {
   const { currentUser, loading } = useAuth();
 
@@ -21,7 +22,8 @@ function AppContent() {
     <BrowserRouter>
       {currentUser ? <Header user={currentUser} /> : null}
       <Routes>
-        <Route path="/" element={currentUser ? <HomePage /> : <Navigate to="/login" />} />
+        <Route path="/" element={currentUser ? <LandingPage /> : <Navigate to="/login" />} />
+        <Route path="/patients" element={currentUser ? <HomePage /> : <Navigate to="/login" />} />
         <Route path="/login" element={!currentUser ? <LoginPage /> : <Navigate to="/" />} />
         <Route path="/signup" element={!currentUser ? <SignUpPage /> : <Navigate to="/" />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
