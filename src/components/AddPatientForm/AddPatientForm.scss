@@ -1,0 +1,75 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.add-patient-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: $background-color;
+  font-family: $font-family;
+  color: $text-color;
+  border-radius: 8px;
+
+  @include tablet {
+      padding: 1.5rem;
+      gap: 2rem;
+    
+    }
+
+    @include desktop {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: $text-color;
+  }
+
+  &__input {
+    padding: 0.75rem;
+    border: 1px solid $border-color;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: $font-family;
+    background-color: white;
+    color: $text-color;
+
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+      box-shadow: 0 0 4px $primary-color;
+    }
+
+    @include tablet {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+  }
+
+  &__button {
+    @include button-style($primary-color);
+    width: 100%;
+    font-size: 1rem;
+
+    @include tablet {
+        padding: 1rem;
+        font-size: 1.1rem;
+    }
+    @include desktop {
+        width: auto;
+        align-self: center;
+        padding: 1rem 2rem;
+    }
+  }
+}
+

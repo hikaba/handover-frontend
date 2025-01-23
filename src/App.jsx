@@ -7,7 +7,8 @@ import HomePage from "./pages/HomePage/HomePage";
 import Loading from "./components/Loading/Loading";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
 import Header from "./components/Header/Header";
-import ForgotPasswordPage from "./pages/ForgotPasswordPage/ForgotPasswordPage"
+import ForgotPasswordPage from "./pages/ForgotPasswordPage/ForgotPasswordPage";
+import AddPatientPage from './pages/AddPatientPage/AddPatientPage';
 function AppContent() {
   const { currentUser, loading } = useAuth();
 
@@ -23,9 +24,8 @@ function AppContent() {
         <Route path="/login" element={!currentUser ? <LoginPage /> : <Navigate to="/" />} />
         <Route path="/signup" element={!currentUser ? <SignUpPage /> : <Navigate to="/" />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-
+        <Route path='/addPatient' element={<AddPatientPage />}></Route>
       </Routes> 
-
     </BrowserRouter>
   )
 }

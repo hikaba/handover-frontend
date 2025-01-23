@@ -41,3 +41,16 @@ export const getPatients = () => {
 export const getPatientsByDoctorId = (doctorId) => {
     return apiClient.get(`/api/doctors/${doctorId}/patients`);
 };
+
+export const createPatient = (patientData, doctorId) => {
+    const requestBody = {
+        patientData: {
+            first_name: patientData.first_name,
+            last_name: patientData.last_name,
+            date_of_birth: patientData.date_of_birth,
+            medical_history: patientData.medical_history
+        },
+        doctor_id: doctorId
+    };
+    return apiClient.post(`/api/patients`, requestBody);
+}
