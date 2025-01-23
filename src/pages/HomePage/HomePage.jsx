@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { getPatientsByDoctorId } from "../../api/routes";
-
+import PatientListView from "../../components/PatientListView/PatientListView";
 function HomePage() {
     const [patients, setPatients] = useState([]);
     const [loading,  setLoading] =  useState(true);
@@ -28,21 +28,9 @@ function HomePage() {
         return <div>Loading...please wait</div>
     }
     return(
-        <>
-            <h1>welcome to the home page</h1>
-            <h2>Patient List</h2>
-            {patients.length > 0 ? (
-                <ul>
-                    {patients.map(patient => (
-                        <li key = {patient.id}>
-                            {patient.last_name}, {patient.first_name}
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p>No patients found.</p>
-            )}
-        </>
+        <div className="home">
+            <PatientListView patients={patients} />
+        </div>
     )
 }
 export default HomePage;
