@@ -67,6 +67,6 @@ export const updateHandoverNote = (patientId, handoverNote) => {
     return apiClient.put(`api/patients/${patientId}/handover`,requestBody);
 }
 
-export const fetchPatientData = (patientId) => {
+export const getPatientById = (patientId) => {
     return apiClient.get(`api/patients/${patientId}`)
 }

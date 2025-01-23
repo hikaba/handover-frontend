@@ -1,0 +1,170 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use 'sass:color';
+
+.patient-page {
+    padding: 2rem;
+    font-family: $font-family;
+    color: $text-color;
+    background-color: $background-color;
+    line-height: 1.6;
+
+    &__name {
+        padding: 0 5%;
+        text-align: left;
+        margin-bottom: 0.5rem;
+
+        @include mobile-header;
+
+        @include tablet {
+            padding: 0 10%;
+            @include tablet-header;
+        }
+
+        @include desktop {
+            padding: 0 15%;
+            @include desktop-header;
+        }
+    }
+
+    &__dob {
+        padding: 0 5%;
+        margin: 0;
+        font-size: 1rem;
+
+        @include tablet {
+            padding: 0 10%;
+        }
+
+        @include desktop {
+            padding: 0 15%;
+        }
+    }
+
+    &__medical-history-section {
+        padding: 0 5%;
+        margin-bottom: 2rem;
+
+        @include tablet {
+            padding: 0 10%;
+        }
+
+        @include desktop {
+            padding: 0 15%;
+        }
+    }
+
+    &__mh-title {
+        text-align: left;
+        margin:1rem 0 0.5rem;
+        color: $text-color;
+        font-weight: 600;
+    }
+
+    &__list {
+        list-style: disc;
+        margin: 0;
+        padding-left: 1.5rem;
+
+        @include mobile {
+            font-size: 1rem;
+        }
+
+        @include tablet {
+            font-size: 1.1rem;
+        }
+
+        @include desktop {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__item {
+        margin-bottom: 0.5rem;
+        line-height: 1.5;
+    }
+
+    &__header {
+        padding: 0 5%;
+        margin-bottom: 1rem;
+
+        @include mobile-header;
+
+        @include tablet {
+            padding: 0 10%;
+            @include tablet-header;
+        }
+
+        @include desktop {
+            padding: 0 15%;
+            @include desktop-header;
+            margin-top: 2rem;
+        }
+    }
+
+    &__handover-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 5%;
+
+        @include tablet {
+            padding: 0 10%;
+        }
+
+        @include desktop {
+            padding: 0 15%;
+        }
+    }
+
+    &__handover-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    &__handover-label {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+    }
+
+    &__handover-input {
+        width: 100%;
+        height: 12.5rem;
+        padding: 0.75rem;
+        font-size: 1rem;
+        font-family: $font-family;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        resize: vertical;
+        background-color: white;
+
+        &:focus {
+            border-color: $primary-color;
+            outline: none;
+            box-shadow: 0 0 5px color.scale($primary-color, $lightness: 25%);
+        }
+
+        @include tablet {
+            height: 9.5rem;
+        }
+
+        @include desktop {
+            height: 7.5rem;
+        }
+    }
+
+    &__handover-button {
+        @include button-style($primary-color);
+
+        &:hover {
+            background-color: $button-hover-color;
+        }
+
+        &:active {
+            background-color: color.scale($primary-color, $lightness: -20%);
+        }
+    }
+}
