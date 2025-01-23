@@ -54,3 +54,15 @@ export const createPatient = (patientData, doctorId) => {
     };
     return apiClient.post(`/api/patients`, requestBody);
 }
+
+export const fetchHandoverNote = (patientId) => {
+    return apiClient.get(`api/patients/${patientId}/handover`);
+}
+
+export const updateHandoverNote = (patientId, handoverNote) => {
+    const requestBody = {
+        handover_note: handoverNote
+    }
+
+    return apiClient.put(`api/patients/${patientId}/handover`,requestBody);
+}
