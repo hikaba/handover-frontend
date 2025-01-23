@@ -26,7 +26,7 @@ function AppContent() {
         <Route path="/signup" element={!currentUser ? <SignUpPage /> : <Navigate to="/" />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/addPatient" element={<AddPatientPage />}/>
-        <Route path="/patient/:id" element={<PatientPage />}/>
+        <Route path="/patient/:id/handover" element={<PatientPage />}/>
       </Routes> 
     </BrowserRouter>
   )

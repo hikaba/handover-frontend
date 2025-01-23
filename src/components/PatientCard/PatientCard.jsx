@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function PatientCard({ patient }) {
     return (
-        <Link to={`/patient/${patient.id}`} className="patient">
+        <Link to={`/patient/${patient.id}/handover`} className="patient">
             <div className="patient-card__container">
                 <p className="patient__name">{patient.last_name}, {patient.first_name}</p>
                 <p className="patient__DOB">Date of Birth: {patient.date_of_birth}</p>
