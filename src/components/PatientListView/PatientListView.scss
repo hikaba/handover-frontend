@@ -1,0 +1,43 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.patient__list {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 1.25rem 1rem;
+
+    @include tablet {
+        padding: 2rem 1.5rem;
+    }
+  }
+  
+.patient_header {
+    @include mobile-header;
+    text-align: left;
+    padding: 1rem;
+    color: $accent-color;
+    margin: 0;
+    @include tablet {
+        @include tablet-header;
+        padding: 1.5rem;
+      }
+      @include desktop {
+        padding: 2rem;
+      }
+  }
+
+.patient-cards__container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: white;
+    border: 1px solid $border-color; /* Light gray border */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    @include tablet{
+        padding: 1.5rem;
+    }
+  }
+  

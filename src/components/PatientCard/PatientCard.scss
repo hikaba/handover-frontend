@@ -1,2 +1,42 @@
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
+
+.patient {
+    text-decoration: none; 
+    color: $text-color; 
+    
+    &-card__container {
+      background-color: white; 
+      border: 1px solid $border-color;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      @include tablet {
+        padding: 1.5rem;
+      }
+      @include desktop {
+        padding: 2rem;
+      }
+
+      &:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    &__name {
+      @include mobile-header;
+      color: $accent-color;
+      margin-bottom: 0.5rem;
+      @include tablet {
+        @include tablet-header;
+      }
+    }
+
+    &__DOB {
+      font-size: 1rem;
+      color: $text-color;
+    }  
+}
