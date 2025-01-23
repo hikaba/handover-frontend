@@ -70,3 +70,7 @@ export const updateHandoverNote = (patientId, handoverNote) => {
 export const getPatientById = (patientId) => {
     return apiClient.get(`api/patients/${patientId}`)
 }
+
+export const getPatientsByBlock = (block) => {
+    return apiClient.get(`api/patients?block=${block}`);
+};

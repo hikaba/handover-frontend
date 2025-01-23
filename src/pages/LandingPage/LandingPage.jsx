@@ -6,7 +6,7 @@ import "./LandingPage.scss";
 function LandingPage() {
     const navigate = useNavigate();
 
-    const blocks = ["Cardio", "ICU", "Neprology", "Gastroenterology", "Respirology"];
+    const blocks = ["Cardiology", "ICU", "Nephrology", "Gastroenterology", "Respirology"];
 
     const handleBlockClick = (block) => {
         navigate(`/patients?block=${block}`)

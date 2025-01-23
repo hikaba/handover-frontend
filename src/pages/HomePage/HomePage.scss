@@ -1,0 +1,17 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.block-patients__header {
+    @include mobile-header;
+        text-align: center;
+        padding: 1.5rem 1rem 0;
+        color: $accent-color;
+        margin: 0;
+        @include tablet {
+            @include tablet-header;
+            // padding: 1.5rem;
+          }
+        @include desktop {
+            padding: 2rem 1rem 0;
+          }
+}
