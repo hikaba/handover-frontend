@@ -38,7 +38,7 @@ function HomePage() {
     return(
         <div className="home">
             <h1 className="block-patients__header">{block.toUpperCase()} Patients</h1>
-            <PatientListView patients={patients} />
+            <PatientListView patients={patients} block={block} />
         </div>
     )
 }

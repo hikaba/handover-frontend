@@ -48,7 +48,8 @@ export const createPatient = (patientData, doctorId) => {
             first_name: patientData.first_name,
             last_name: patientData.last_name,
             date_of_birth: patientData.date_of_birth,
-            medical_history: JSON.stringify({details: patientData.medical_history})
+            medical_history: JSON.stringify({details: patientData.medical_history}),
+            current_block: patientData.current_block
         },
         doctor_id: doctorId
     };

@@ -2,15 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PatientCard from "../PatientCard/PatientCard";
 import "./PatientListView.scss";
+import { useNavigate } from "react-router-dom";
 
-function PatientListView({ patients }){
+function PatientListView({ patients, block }){
+    const navigate = useNavigate();
+
+    const handleAddPatientClick = () => {
+        navigate("/addPatient", { state: { block }});
+    };
+
     return(
         <div className="patient-list">
             <div className="patient-list__container">
             <p className="patient-list__title">Patients</p>
-            <Link to="/addPatient" className="patient-list__add-button">
+            <button onClick={handleAddPatientClick} className="patient-list__add-button">
                 Add New Patient
-            </Link>
+            </button>
                 {patients.map(patient => (
                     <PatientCard key={patient.id} patient={patient} />
                 ))}

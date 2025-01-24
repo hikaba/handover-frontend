@@ -4,13 +4,14 @@ import { createPatient } from "../../api/routes";
 import { useAuth } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-function AddPatientForm(){
+function AddPatientForm({ block }){
     const navigate = useNavigate();
     const [patient, setPatient] = useState({
         first_name: '',
         last_name: '',
         date_of_birth: '',
-        medical_history: ''
+        medical_history: '',
+        current_block: block
     });
     const { currentUser } = useAuth();
 
@@ -22,7 +23,7 @@ function AddPatientForm(){
         event.preventDefault();
         try {
             await createPatient(patient, currentUser.uid);
-            navigate('/');
+            navigate(`/patients?block=${block}`);
 
         } catch (error) {
             console.error("error adding patient: ", error);
